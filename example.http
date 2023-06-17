@@ -6,3 +6,24 @@ Content-Type: application/json
     "password": "123",
     "email": "kekma@mail.ru"
 }
+
+###
+
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+    "username": "bebra",
+    "password": "123"
+}
+
+###
+
+GET http://localhost:3000/users/login-check
+Content-Type: application/json
+Set-Cookie: connect.sid=s%3AuxDeWtZv4JuY9gvBjBs_xxelW5I3xwOz.elbPeSZn%2BaSLaY02XAZ8YTBr6At894Gh88jhzog8%2FlA
+
+{
+    "username": "bebra",
+    "password": "123"
+}

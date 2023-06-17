@@ -31,6 +31,7 @@ export class UsersService {
     if (existingByUserName) {
       return { warningMessage: 'Пользователь с таким именем уже существует' };
     }
+
     if (existingByEmail) {
       return { warningMessage: 'Пользователь с таким email уже существует' };
     }
@@ -38,8 +39,8 @@ export class UsersService {
     const hashedPassword = await bcrypt.hash(createUserDto.password, 10);
 
     user.username = createUserDto.username;
-    user.email = createUserDto.email;
     user.password = hashedPassword;
+    user.email = createUserDto.email;
 
     return user.save();
   }
